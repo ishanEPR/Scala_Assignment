@@ -3,13 +3,8 @@
 //What is the total wholesale cost for 60 copies?
 object q3{
 def main(args:Array[String]){
-
-
 var total:Double=bookprice(60)-discount(bookprice(60))+shippingCost(60);
 println("The total wholesale cost for 60 books: "+total);
-
-
-
 }
 def bookprice(x:Int):Double={
 x*24.95;
