@@ -1,2 +1,2 @@
-# Scala_Assignment1
-scala first assignment
+# Scala_Assignments
+scala  assignments
