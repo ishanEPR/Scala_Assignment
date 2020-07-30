@@ -40,5 +40,5 @@ object question4
 
 	val overdraft=(list:List[account])=>list.filter(x=>x.aBalance<=0);
 	val balance=(list:List[account])=>list.reduce((x,y)=>new account("V000",1000,x.aBalance+y.aBalance));
-	val interest=(list:List[account])=>list.map(x=>(if(x.aBalance>0) x.aBalance*0.05d else x.aBalance*0.01d));
+	val interest=(list:List[account])=>list.map(x=>(if(x.aBalance>0) x.aBalance*0.05d else x.aBalance*0.1d));
 }
