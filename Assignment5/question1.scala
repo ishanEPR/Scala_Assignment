@@ -1,15 +1,22 @@
-object question1 extends App{
-val r1=new Rational(2,4)
-val r2=new Rational(6,8)
-
-println("Negative Rational number"+r1.negative)
-println("Negative Rational number"+r2.negative)
-
-}
 class Rational(n:Int,d:Int)
 {
-def numer=n
-def denum=d
-def negative=new Rational(-this.numer,this.denum)
-override def toString=numer+"/"+denum
+    require(d>0,"d must be greater than zero")
+    def numer=n/gcd(n,d)
+    def denum=d/gcd(n,d)
+    def this(n:Int)=this(n,1)
+    private def gcd(a:Int,b:Int):Int = if(b==0) a else gcd(b,a%b)
+    def negative=new Rational(-this.numer,this.denum)
+    override def toString=numer+"/"+denum
+}
+
+object question1{
+		def main(args:Array[String])
+		{
+		val r1=new Rational(7,12)
+		val r2=r1.negative
+
+		println("Rational number="+r1)
+		println("Negation of Rational number="+r2)
+
+		}
 }
